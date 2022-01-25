@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Department Unical</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,18 +13,18 @@
 
     </head>
     <body>
-        
-
+    @include('sweetalert::alert')
         <div class="container">
             <div class="row">
                 <div class="m-5">
                     <div class="jumbotron">
+                        <a href="{{ url('/') }}" class="btn btn-primary btn-sm m-3">Back</a>
                         <h1 class="display-4">University Of Calabar Departmental And Faculty Dues Data Collection</h1>
                         <p class="lead">This is for faculty registeration alone.</p>
                         <hr class="my-4">
                         <p>Department Due.</p>
-                        <form>
-
+                        <form  method="POST" action="{{ route('storeDepartment') }}">
+                            @csrf
                             <div class="form-group row">
                                 <label for="facultyName" class="col-sm-2 col-form-label">Faculty</label>
                                 <div class="col-sm-10">

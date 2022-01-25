@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SendDataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,7 @@ Route::view('/', 'welcome');
 Route::view('faculty', 'faculty');
 
 Route::view('department', 'department');
+
+Route::post('save/faculty', [SendDataController::class, 'storefaculty'])->name('storeFaculty');
+
+Route::post('save/department', [SendDataController::class, 'storedepartment'])->name('storeDepartment');

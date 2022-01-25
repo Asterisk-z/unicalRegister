@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 
 class SendDataController extends Controller
@@ -32,7 +33,34 @@ class SendDataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storefaculty(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|unique:faculties,name',
+            'amount' => 'required|numeric',
+            'bankName' => 'required|string',
+            'accountName' => 'required|string',
+            'accountNumber' => 'required|numeric',
+            'contactPersonName' => 'required|string',
+            'contactPersonNumber' => 'required|numeric',
+        ]);
+
+        if (Faculty::create($data)) {
+            return back()->with('success', 'Faculty Added Successdfully');
+        }
+        
+        return back()->with('error', 'Failed to upload');
+
+    }
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storedepartment(Request $request)
     {
         //
     }

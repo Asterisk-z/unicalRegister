@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Unical Faculty</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,46 +12,61 @@
 
 
     </head>
-    <body>
+    <body>  
+        @include('sweetalert::alert')
         
 
         <div class="container">
             <div class="row">
                 <div class="m-5">
                     <div class="jumbotron">
+                        <a href="{{ url('/') }}" class="btn btn-primary btn-sm m-3">Back</a>
                         <h1 class="display-4">University Of Calabar Departmental And Faculty Dues Data Collection</h1>
                         <p class="lead">This is for faculty registeration alone.</p>
                         <hr class="my-4">
                         <p>Faculty Due.</p>
-                        <form>
+                        <form method="POST" action="{{ route('storeFaculty') }}">
+                             @csrf
                             <div class="form-group row">
                                 <label for="facultyName" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="facultyName" placeholder="Name Of Faculty">
+                                    <input type="text" class="form-control" id="facultyName"  name="name" placeholder="Name Of Faculty">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="Cost" class="col-sm-2 col-form-label">Cost</label>
+                                <label for="Cost" class="col-sm-2 col-form-label">Amount</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Cost" placeholder="Cost Of Faculty">
+                                    <input type="text" class="form-control" id="Cost" name="amount" placeholder="Cost of Due">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="bank" class="col-sm-2 col-form-label">Name</label>
+                                <label for="bank" class="col-sm-2 col-form-label">Bank Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="bank" placeholder="Bank">
+                                    <input type="text" class="form-control" id="bank" name="bankName" placeholder="Bank">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="Accountname" class="col-sm-2 col-form-label">Account Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Accountname" placeholder="Account Name ">
+                                    <input type="text" class="form-control" id="Accountname" name="accountName" placeholder="Account Name ">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="Accountnumber" class="col-sm-2 col-form-label">Account Name</label>
+                                <label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Accountnumber" placeholder="Account Number">
+                                    <input type="text" class="form-control" id="Accountnumber" name="accountNumber" placeholder="Account Number">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="contactPersonName" name="contactPersonName" placeholder="Contact Person Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="contactPersonNumber" name="contactPersonNumber" placeholder="Contact Person Number">
                                 </div>
                             </div>
                             <div class="form-group row">
