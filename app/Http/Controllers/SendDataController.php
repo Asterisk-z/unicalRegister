@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,7 @@ class SendDataController extends Controller
         ]);
 
         if (Faculty::create($data)) {
-            return back()->with('success', 'Faculty Added Successdfully');
+            return back()->with('success', 'Faculty Added Successfully');
         }
         
         return back()->with('error', 'Failed to upload');
@@ -61,8 +62,24 @@ class SendDataController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function storedepartment(Request $request)
-    {
-        //
+    {   
+        $data = $request->validate([
+            'name' => 'required|string|unique:departments,name',
+            'facultyName' => 'required|string',
+            'amount' => 'required|array',
+            'dueName' => 'required|array',
+            'bankName' => 'required|array',
+            'accountName' => 'required|array',
+            'accountNumber' => 'required|array',
+        ]);
+
+        // dd($data);
+        
+        if (Department::create($data)) {
+            return back()->with('success', 'Department Added Successfully');
+        }
+        
+        return back()->with('error', 'Failed to upload');
     }
 
     /**

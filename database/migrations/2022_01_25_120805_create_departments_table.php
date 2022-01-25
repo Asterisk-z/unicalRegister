@@ -18,6 +18,7 @@ class CreateDepartmentsTable extends Migration
             $table->string('name');
             $table->string('facultyName');
             $table->string('amount');
+            $table->string('dueName');
             $table->string('bankName');
             $table->string('accountName');
             $table->string('accountNumber');

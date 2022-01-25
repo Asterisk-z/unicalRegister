@@ -23,3 +23,6 @@ Route::view('department', 'department');
 Route::post('save/faculty', [SendDataController::class, 'storefaculty'])->name('storeFaculty');
 
 Route::post('save/department', [SendDataController::class, 'storedepartment'])->name('storeDepartment');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

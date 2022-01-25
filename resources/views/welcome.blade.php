@@ -20,9 +20,9 @@
                 <div class="m-5">
                     <div class="jumbotron">
                         <h1 class="display-4">University Of Calabar Departmental And Faculty Dues Data Collection</h1>
-                        <p class="lead">This is for faculty registeration alone.</p>
+                        <p class="lead"></p>
                         <hr class="my-4">
-                        <p>Department Due.</p>
+                        <p></p>
 
                         <div class="row text-center">
                             <div class="col-md-6">
