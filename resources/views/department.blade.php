@@ -20,7 +20,7 @@
                     <div class="jumbotron">
                         <a href="{{ url('/') }}" class="btn btn-primary btn-sm m-3">Back</a>
                         <h1 class="display-4">University Of Calabar Departmental And Faculty Dues Data Collection</h1>
-                        <p class="lead">This is for department registeration alone.</p>
+                        <p class="lead">This is for department data collection alone.</p>
                         <hr class="my-4">
                         <p>Department Due.</p>
                         <form  method="POST" action="{{ route('storeDepartment') }}">
@@ -34,7 +34,7 @@
                             <div class="form-group row">
                                 <label for="department" class="col-sm-2 col-form-label">Department</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="department"  name="name" placeholder="Cost Of Faculty">
+                                    <input type="text" class="form-control" id="department"  name="name" placeholder="Name Of Department">
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="Accountnumber" class="col-sm-2 col-form-label">Account Name</label>
+                                    <label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number">
                                     </div>
@@ -99,7 +99,7 @@
                 var i = 1
 
                 var html =
-                    ' <div class="extradues" id="extra"><hr class="my-4"><a class="btn btn-danger col-md-2 mb-4" href="javascript:void()" id="remove">Remove</a><div class="form-group row"><label for="NameofDue" class="col-sm-2 col-form-label">Name Of Due</label><div class="col-sm-10"><input type="text" class="form-control" id="NameofDue" name="dueName[]" placeholder="Name Of Due"></div></div><div class="form-group row"><label for="bank" class="col-sm-2 col-form-label">Bank Name</label><div class="col-sm-10"><input type="text" class="form-control" id="bank" name="bankName[]" placeholder="Bank Name"></div></div><div class="form-group row"><label for="accountname" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" id="accountname" name="accountName[]" placeholder="Account Name "></div></div><div class="form-group row"><label for="Accountnumber" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number"></div></div></div><div class="form-group row"><label for="amount" class="col-sm-2 col-form-label">Amount</label><div class="col-sm-10"><input type="text" class="form-control" id="amount" name="amount[]" placeholder="Amount"></div></div></div>'
+                    ' <div class="extradues" id="extra"><hr class="my-4"><a class="btn btn-danger col-md-2 mb-4" href="javascript:void()" id="remove">Remove</a><div class="form-group row"><label for="NameofDue" class="col-sm-2 col-form-label">Name Of Due</label><div class="col-sm-10"><input type="text" class="form-control" id="NameofDue" name="dueName[]" placeholder="Name Of Due"></div></div><div class="form-group row"><label for="bank" class="col-sm-2 col-form-label">Bank Name</label><div class="col-sm-10"><input type="text" class="form-control" id="bank" name="bankName[]" placeholder="Bank Name"></div></div><div class="form-group row"><label for="accountname" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" id="accountname" name="accountName[]" placeholder="Account Name "></div></div><div class="form-group row"><label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label><div class="col-sm-10"><input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number"></div></div><div class="form-group row"><label for="amount" class="col-sm-2 col-form-label">Amount</label><div class="col-sm-10"><input type="text" class="form-control" id="amount" name="amount[]" placeholder="Amount"></div></div></div>     </div>'
 
                 $("#add").on('click', function (e) {
 

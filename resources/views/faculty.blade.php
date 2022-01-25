@@ -22,7 +22,7 @@
                     <div class="jumbotron">
                         <a href="{{ url('/') }}" class="btn btn-primary btn-sm m-3">Back</a>
                         <h1 class="display-4">University Of Calabar Departmental And Faculty Dues Data Collection</h1>
-                        <p class="lead">This is for faculty registeration alone.</p>
+                        <p class="lead">This is for faculty data collection alone.</p>
                         <hr class="my-4">
                         <p>Faculty Due.</p>
                         <form method="POST" action="{{ route('storeFaculty') }}">
