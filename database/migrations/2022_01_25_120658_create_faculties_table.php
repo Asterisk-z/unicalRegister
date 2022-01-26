@@ -16,6 +16,7 @@ class CreateFacultiesTable extends Migration
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('dueName');
             $table->string('amount');
             $table->string('bankName');
             $table->string('accountName');

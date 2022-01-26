@@ -22,6 +22,8 @@ class CreateDepartmentsTable extends Migration
             $table->string('bankName');
             $table->string('accountName');
             $table->string('accountNumber');
+            $table->string('contactPersonName');
+            $table->string('contactPersonNumber');
             $table->timestamps();
         });
     }

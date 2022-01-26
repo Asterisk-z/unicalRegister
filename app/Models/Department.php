@@ -12,10 +12,12 @@ class Department extends Model
     protected $guarded = [];
 
     protected $casts = [
-           'amount' => 'array',
+            'amount' => 'array',
             'dueName' => 'array',
             'bankName' => 'array',
             'accountName' => 'array',
             'accountNumber' => 'array',
+            'contactPersonName' => 'array',
+            'contactPersonNumber' => 'array',
     ];
 }
