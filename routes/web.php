@@ -26,3 +26,11 @@ Route::post('save/department', [SendDataController::class, 'storedepartment'])->
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/list', function () {
+	$faculties = App\Models\Faculty::all();
+	$departments = App\Models\Department::all();
+
+	return view('list', compact('faculties', 'departments'));
+});

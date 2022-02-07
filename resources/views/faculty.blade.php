@@ -31,49 +31,54 @@
                                 <div class="form-group row">
                                     <label for="facultyName" class="col-sm-2 col-form-label">Faculty Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="facultyName"  name="name[]" placeholder="Name Of Faculty">
+                                        <select name="name[]" id="facultyName" class="form-control" required>
+                                            <option>Select A Faculty</option>
+                                            @foreach (config('app.faculties') as $faculty)
+                                                <option>{{ $faculty }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="dueName" class="col-sm-2 col-form-label">Dues Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="dueName"  name="dueName[]" placeholder="Name Of Dues">
+                                        <input type="text" class="form-control" required id="dueName"  name="dueName[]" placeholder="Name Of Dues">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="Cost" class="col-sm-2 col-form-label">Amount</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Cost" name="amount[]" placeholder="Cost of Dues">
+                                        <input type="text" class="form-control" required id="Cost" name="amount[]" placeholder="Cost of Dues">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="bank" class="col-sm-2 col-form-label">Bank Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="bank" name="bankName[]" placeholder="Bank">
+                                        <input type="text" class="form-control" required id="bank" name="bankName[]" placeholder="Bank">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="Accountname" class="col-sm-2 col-form-label">Account Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Accountname" name="accountName[]" placeholder="Account Name ">
+                                        <input type="text" class="form-control" required id="Accountname" name="accountName[]" placeholder="Account Name ">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number">
+                                        <input type="text" class="form-control" required id="Accountnumber" name="accountNumber[]" placeholder="Account Number">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name">
+                                        <input type="text" class="form-control" required id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number">
+                                        <input type="text" class="form-control" required id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number">
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +113,7 @@
                 var i = 1
 
                 var html =
-                    '<div class="extradues" id="extra"><hr class="my-4"><a class="btn btn-danger btn-sm col-md-2 mb-4" href="javascript:void()" id="remove">Remove</a><div class="form-group row"><label for="facultyName" class="col-sm-2 col-form-label">Faculty Name</label><div class="col-sm-10"><input type="text" class="form-control" id="facultyName"  name="name[]" placeholder="Name Of Faculty"></div></div><div class="form-group row"><label for="dueName" class="col-sm-2 col-form-label">Dues Name</label><div class="col-sm-10"><input type="text" class="form-control" id="dueName"  name="dueName[]" placeholder="Name Of Dues"></div></div><div class="form-group row"><label for="Cost" class="col-sm-2 col-form-label">Amount</label><div class="col-sm-10"><input type="text" class="form-control" id="Cost" name="amount[]" placeholder="Cost of Dues"></div></div><div class="form-group row"><label for="bank" class="col-sm-2 col-form-label">Bank Name</label><div class="col-sm-10"><input type="text" class="form-control" id="bank" name="bankName[]" placeholder="Bank"></div></div><div class="form-group row"><label for="Accountname" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" id="Accountname" name="accountName[]" placeholder="Account Name "></div></div><div class="form-group row"><label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label><div class="col-sm-10"><input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number"></div></div><div class="form-group row"><label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label><div class="col-sm-10"><input type="text" class="form-control" id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name"></div></div><div class="form-group row"><label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label><div class="col-sm-10"><input type="text" class="form-control" id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number"></div></div></div>'
+                    '<div class="extradues" id="extra"><hr class="my-4"><a class="btn btn-danger btn-sm col-md-2 mb-4" href="javascript:void()" id="remove">Remove</a><div class="form-group row"><label for="facultyName" class="col-sm-2 col-form-label">Faculty Name</label><div class="col-sm-10"><select name="name[]" id="facultyName" class="form-control" required><option>Select A Faculty</option>@foreach (config('app.faculties') as $faculty)<option>{{ $faculty }}</option>@endforeach</select></div></div><div class="form-group row"><label for="dueName" class="col-sm-2 col-form-label">Dues Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="dueName"  name="dueName[]" placeholder="Name Of Dues"></div></div><div class="form-group row"><label for="Cost" class="col-sm-2 col-form-label">Amount</label><div class="col-sm-10"><input type="text" class="form-control" required id="Cost" name="amount[]" placeholder="Cost of Dues"></div></div><div class="form-group row"><label for="bank" class="col-sm-2 col-form-label">Bank Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="bank" name="bankName[]" placeholder="Bank"></div></div><div class="form-group row"><label for="Accountname" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="Accountname" name="accountName[]" placeholder="Account Name "></div></div><div class="form-group row"><label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label><div class="col-sm-10"><input type="text" class="form-control" required id="Accountnumber" name="accountNumber[]" placeholder="Account Number"></div></div><div class="form-group row"><label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name"></div></div><div class="form-group row"><label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label><div class="col-sm-10"><input type="text" class="form-control" required id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number"></div></div></div>'
 
                 $("#add").on('click', function (e) {
 

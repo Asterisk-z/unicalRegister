@@ -28,13 +28,23 @@
                             <div class="form-group row">
                                 <label for="facultyName" class="col-sm-2 col-form-label">Faculty</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="facultyName"  name="facultyName" placeholder="Name Of Faculty">
+                                    <select name="facultyName" id="facultyName" class="form-control" required>
+                                        <option>Select A Faculty</option>
+                                        @foreach (config('app.faculties') as $faculty)
+                                            <option>{{ $faculty }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="department" class="col-sm-2 col-form-label">Department</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="department"  name="name" placeholder="Name Of Department">
+                                    <select name="name" id="department" class="form-control" required>
+                                        <option>Select A Department</option>
+                                        @foreach (config('app.departments') as $department)
+                                            <option>{{ $department }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
@@ -43,43 +53,43 @@
                                 <div class="form-group row">
                                     <label for="NameofDue" class="col-sm-2 col-form-label">Name Of Dues</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="NameofDue" name="dueName[]" placeholder="Name Of Dues">
+                                        <input type="text" class="form-control" required id="NameofDue" name="dueName[]" placeholder="Name Of Dues">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="bank" class="col-sm-2 col-form-label">Bank Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="bank" name="bankName[]" placeholder="Bank Name">
+                                        <input type="text" class="form-control" required id="bank" name="bankName[]" placeholder="Bank Name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="accountname" class="col-sm-2 col-form-label">Account Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="accountname" name="accountName[]" placeholder="Account Name ">
+                                        <input type="text" class="form-control" required id="accountname" name="accountName[]" placeholder="Account Name ">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number">
+                                        <input type="text" class="form-control" required id="Accountnumber" name="accountNumber[]" placeholder="Account Number">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="amount" class="col-sm-2 col-form-label">Amount</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="amount" name="amount[]" placeholder="Amount">
+                                        <input type="text" class="form-control" required id="amount" name="amount[]" placeholder="Amount">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name">
+                                        <input type="text" class="form-control" required id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number">
+                                        <input type="text" class="form-control" required id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number">
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +128,7 @@
                 var i = 1
 
                 var html =
-                    ' <div class="extradues" id="extra"><hr class="my-4"><a class="btn btn-danger col-md-2 mb-4" href="javascript:void()" id="remove">Remove</a><div class="form-group row"><label for="NameofDue" class="col-sm-2 col-form-label">Name Of Dues</label><div class="col-sm-10"><input type="text" class="form-control" id="NameofDue" name="dueName[]" placeholder="Name Of Dues"></div></div><div class="form-group row"><label for="bank" class="col-sm-2 col-form-label">Bank Name</label><div class="col-sm-10"><input type="text" class="form-control" id="bank" name="bankName[]" placeholder="Bank Name"></div></div><div class="form-group row"><label for="accountname" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" id="accountname" name="accountName[]" placeholder="Account Name "></div></div><div class="form-group row"><label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label><div class="col-sm-10"><input type="text" class="form-control" id="Accountnumber" name="accountNumber[]" placeholder="Account Number"></div></div><div class="form-group row"><label for="amount" class="col-sm-2 col-form-label">Amount</label><div class="col-sm-10"><input type="text" class="form-control" id="amount" name="amount[]" placeholder="Amount"></div></div><div class="form-group row ereeeee"><label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label><div class="col-sm-10"><input type="text" class="form-control" id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name"></div></div><div class="form-group row"><label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label><div class="col-sm-10"><input type="text" class="form-control" id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number"></div></div></div></div>'
+                    ' <div class="extradues" id="extra"><hr class="my-4"><a class="btn btn-danger col-md-2 mb-4" href="javascript:void()" id="remove">Remove</a><div class="form-group row"><label for="NameofDue" class="col-sm-2 col-form-label">Name Of Dues</label><div class="col-sm-10"><input type="text" class="form-control" required id="NameofDue" name="dueName[]" placeholder="Name Of Dues"></div></div><div class="form-group row"><label for="bank" class="col-sm-2 col-form-label">Bank Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="bank" name="bankName[]" placeholder="Bank Name"></div></div><div class="form-group row"><label for="accountname" class="col-sm-2 col-form-label">Account Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="accountname" name="accountName[]" placeholder="Account Name "></div></div><div class="form-group row"><label for="Accountnumber" class="col-sm-2 col-form-label">Account Number</label><div class="col-sm-10"><input type="text" class="form-control" required id="Accountnumber" name="accountNumber[]" placeholder="Account Number"></div></div><div class="form-group row"><label for="amount" class="col-sm-2 col-form-label">Amount</label><div class="col-sm-10"><input type="text" class="form-control" required id="amount" name="amount[]" placeholder="Amount"></div></div><div class="form-group row ereeeee"><label for="contactPersonName" class="col-sm-2 col-form-label">Contact Person Name</label><div class="col-sm-10"><input type="text" class="form-control" required id="contactPersonName" name="contactPersonName[]" placeholder="Contact Person Name"></div></div><div class="form-group row"><label for="contactPersonNumber" class="col-sm-2 col-form-label">Contact Person Number</label><div class="col-sm-10"><input type="text" class="form-control" required id="contactPersonNumber" name="contactPersonNumber[]" placeholder="Contact Person Number"></div></div></div></div>'
 
                 $("#add").on('click', function (e) {
 
